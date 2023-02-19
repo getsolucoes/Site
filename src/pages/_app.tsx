@@ -1,6 +1,10 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+import { GlobalWrapper } from "../contexts/GlobalContext";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <GlobalWrapper>
+      <Component {...pageProps} />
+    </GlobalWrapper>
+  );
 }
