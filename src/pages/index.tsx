@@ -2,6 +2,7 @@ import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 import Floating from "../components/Floating";
 import Header from "../components/Header";
+import Main from "../components/Main";
 import { useGlobalContext } from "../contexts/GlobalContext";
 import GlobalStyle from "../styles/global";
 import { darkTheme, lightTheme } from "../styles/theme";
@@ -42,6 +43,7 @@ export default function Home() {
             </Head>
             <Header />
             <Floating />
+            <Main />
         </ThemeProvider>
     );
 }

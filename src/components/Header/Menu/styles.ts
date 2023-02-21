@@ -7,7 +7,7 @@ const StyledMenu = styled.div`
     width: 100%;
 
     .button_menu {
-        padding: 15px 20px;
+        padding: 15px 30px 15px 20px;
         width: 240px;
         height: 100%;
         background-color: var(--Color-button-menu);

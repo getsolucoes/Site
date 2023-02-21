@@ -6,7 +6,8 @@ const GlobalStyle = createGlobalStyle`
             --Color-text-primary: ${({ theme }) => theme.text_primary};
             --Color-text-secondary: #99df0cff;
             --Color-button-menu: ${({ theme }) => theme.button_menu};
-            --Color-button-menu-hover: ${({ theme }) => theme.button_menu_hover};
+            --Color-button-menu-hover: ${({ theme }) =>
+                theme.button_menu_hover};
             --Color-primary: #FF577F;
             --Color-primary-Focus: #FF427F;
             --Color-primary-Negative: #59323F;
@@ -34,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
         color: $text-color;
     }
     h1, h2, h3, h4, h5, h6 {
-        font-family: "JetBrains Mono", monospace;
+        font-family: "Raleway", sans-serif;
     }
     p {
         line-height: 1.4;
