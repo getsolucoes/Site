@@ -46,37 +46,6 @@ const StyledContainer = styled.div`
         }
     }
 
-    & > ul {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 30px;
-        width: 100%;
-        padding: 1.5rem 1.5rem 1rem;
-
-        li {
-            a {
-                font-family: "Raleway", sans-serif;
-                color: var(--Color-text-primary);
-            }
-            & > button > a {
-                font-size: 16px;
-                font-weight: 700;
-            }
-            & > .button_menu {
-                padding: 10px 30px;
-                border-radius: 4px;
-                border: 1px solid #cdd1d9;
-                background-color: var(--Color-button-menu);
-                & > a {
-                    font-size: 16px;
-                    font-weight: 700;
-                    color: var(--Color-background);
-                }
-            }
-        }
-    }
-
     @media (min-width: 1100px) {
         display: none;
     }

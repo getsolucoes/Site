@@ -17,8 +17,8 @@ const StyledFloating = styled.div`
     & > button {
         padding: 15px 20px;
         border-radius: 12.5rem;
-        width: 80vw;
-        height: 100%;
+        width: 82vw;
+        height: 3.5rem;
         background-color: var(--Color-button-menu);
         transition: 0.3s;
         & > a {
@@ -29,10 +29,13 @@ const StyledFloating = styled.div`
             color: var(--Color-background);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 20px;
         }
         @media (min-width: 1100px) {
             display: none;
+        }
+        @media (min-width: 768px) {
+            height: 5rem;
         }
     }
 
@@ -45,10 +48,15 @@ const StyledFloating = styled.div`
         color: #fff;
         border-radius: 50%;
         outline: none;
-        width: 3rem;
-        height: 3rem;
+        width: 3.5rem;
+        height: 3.5rem;
         box-shadow: 0 0 6px 2px rgb(0 0 0 / 20%);
         transition: all 0.3s ease-in-out;
+
+        & > svg {
+            width: 1.7rem;
+            height: 1.7rem;
+        }
 
         @media (min-width: 768px) {
             width: 5rem;

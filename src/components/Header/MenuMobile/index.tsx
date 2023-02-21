@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { IoClose } from "react-icons/io5";
 import { useGlobalContext } from "../../../contexts/GlobalContext";
+import Options from "../Options";
 import { StyledContainer, StyledMenuMobile } from "./styles";
 
 const MenuMobile = () => {
@@ -33,68 +34,7 @@ const MenuMobile = () => {
                                 <IoClose />
                             </button>
                         </div>
-                        <ul>
-                            <li>
-                                <button
-                                    type="button"
-                                    onClick={() => {
-                                        setIsClickMobile(false);
-                                    }}
-                                >
-                                    <Link href="/">Quem somos</Link>
-                                </button>
-                            </li>
-                            <li>
-                                <button
-                                    type="button"
-                                    onClick={() => {
-                                        setIsClickMobile(false);
-                                    }}
-                                >
-                                    <Link href="/">Soluções</Link>
-                                </button>
-                            </li>
-                            <li>
-                                <button
-                                    type="button"
-                                    onClick={() => {
-                                        setIsClickMobile(false);
-                                    }}
-                                >
-                                    <Link href="/">Para empresas</Link>
-                                </button>
-                            </li>
-                            <li>
-                                <button
-                                    type="button"
-                                    onClick={() => {
-                                        setIsClickMobile(false);
-                                    }}
-                                >
-                                    <Link href="/">Portfólio</Link>
-                                </button>
-                            </li>
-                            <li>
-                                <button
-                                    type="button"
-                                    onClick={() => {
-                                        setIsClickMobile(false);
-                                    }}
-                                >
-                                    <Link href="/">Dúvidas</Link>
-                                </button>
-                            </li>
-                            <li>
-                                <button
-                                    type="button"
-                                    onClick={() => {
-                                        setIsClickMobile(false);
-                                    }}
-                                >
-                                    <Link href="/">Blog</Link>
-                                </button>
-                            </li>
-                        </ul>
+                        <Options />
                     </StyledContainer>
                 </StyledMenuMobile>
             )}

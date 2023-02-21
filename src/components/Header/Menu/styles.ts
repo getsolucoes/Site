@@ -6,25 +6,6 @@ const StyledMenu = styled.div`
     gap: 30px;
     width: 100%;
 
-    ul {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        & > li {
-            a {
-                font-family: "Raleway", sans-serif;
-                color: var(--Color-text-primary);
-                transition: 0.3s;
-            }
-            & > a {
-                font-size: 16px;
-                font-weight: 700;
-                &:hover {
-                    color: var(--Color-text-secondary);
-                }
-            }
-        }
-    }
     .button_menu {
         padding: 15px 20px;
         width: 240px;
