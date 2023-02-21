@@ -17,14 +17,12 @@ const StyledFloating = styled.div`
     & > button {
         padding: 15px 20px;
         border-radius: 12.5rem;
-        width: 82vw;
+        width: 65vw;
         height: 3.5rem;
         background-color: var(--Color-button-menu);
         transition: 0.3s;
         & > a {
-            font-size: 18px;
-            line-height: 1.5;
-            text-align: left;
+            font-size: 14px;
             font-weight: 700;
             color: var(--Color-background);
             display: flex;
@@ -35,7 +33,17 @@ const StyledFloating = styled.div`
             display: none;
         }
         @media (min-width: 768px) {
+            width: 80vw;
             height: 5rem;
+            & > a {
+                font-size: 18px;
+            }
+        }
+        @media (min-width: 400px) {
+            width: 75vw;
+            & > a {
+                font-size: 16px;
+            }
         }
     }
 
