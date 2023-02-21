@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
+import Floating from "../components/Floating";
 import Header from "../components/Header";
 import { useGlobalContext } from "../contexts/GlobalContext";
 import GlobalStyle from "../styles/global";
@@ -40,6 +41,7 @@ export default function Home() {
                 <link rel="manifest" href="/site.webmanifest" />
             </Head>
             <Header />
+            <Floating />
         </ThemeProvider>
     );
 }

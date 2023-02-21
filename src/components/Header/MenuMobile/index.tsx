@@ -41,7 +41,7 @@ const MenuMobile = () => {
                                         setIsClickMobile(false);
                                     }}
                                 >
-                                    <Link href="/">Home</Link>
+                                    <Link href="/">Quem somos</Link>
                                 </button>
                             </li>
                             <li>
@@ -51,7 +51,7 @@ const MenuMobile = () => {
                                         setIsClickMobile(false);
                                     }}
                                 >
-                                    <Link href="/">Sobre</Link>
+                                    <Link href="/">Soluções</Link>
                                 </button>
                             </li>
                             <li>
@@ -61,7 +61,7 @@ const MenuMobile = () => {
                                         setIsClickMobile(false);
                                     }}
                                 >
-                                    <Link href="/">Serviços</Link>
+                                    <Link href="/">Para empresas</Link>
                                 </button>
                             </li>
                             <li>
@@ -81,7 +81,7 @@ const MenuMobile = () => {
                                         setIsClickMobile(false);
                                     }}
                                 >
-                                    <Link href="/">Equipe</Link>
+                                    <Link href="/">Dúvidas</Link>
                                 </button>
                             </li>
                             <li>
@@ -91,18 +91,7 @@ const MenuMobile = () => {
                                         setIsClickMobile(false);
                                     }}
                                 >
-                                    <Link href="/">Contato</Link>
-                                </button>
-                            </li>
-                            <li>
-                                <button
-                                    className="button_menu"
-                                    type="button"
-                                    onClick={() => {
-                                        setIsClickMobile(false);
-                                    }}
-                                >
-                                    <Link href="/">Confira</Link>
+                                    <Link href="/">Blog</Link>
                                 </button>
                             </li>
                         </ul>

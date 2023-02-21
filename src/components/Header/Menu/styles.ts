@@ -1,40 +1,50 @@
 import styled from "styled-components";
 
-const StyledMenu = styled.ul`
+const StyledMenu = styled.div`
     display: none;
     align-items: center;
     gap: 30px;
     width: 100%;
 
-    li {
-        a {
-            font-family: "Raleway", sans-serif;
-            color: var(--Color-text-primary);
-            transition: 0.3s;
-        }
-        & > a {
-            font-size: 16px;
-            font-weight: 700;
-            &:hover {
-                color: var(--Color-text-secondary);
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        & > li {
+            a {
+                font-family: "Raleway", sans-serif;
+                color: var(--Color-text-primary);
+                transition: 0.3s;
             }
-        }
-        & > .button_menu {
-            padding: 10px 30px;
-            border-radius: 4px;
-            border: 1px solid #cdd1d9;
-            background-color: var(--Color-button-menu);
-            transition: 0.3s;
             & > a {
-                font-size: 14px;
+                font-size: 16px;
                 font-weight: 700;
-                color: var(--Color-background);
-            }
-            &:hover {
-                background-color: var(--Color-button-menu-hover);
-                & > a {
-                    color: var(--Color-background);
+                &:hover {
+                    color: var(--Color-text-secondary);
                 }
+            }
+        }
+    }
+    .button_menu {
+        padding: 15px 20px;
+        width: 240px;
+        height: 100%;
+        background-color: var(--Color-button-menu);
+        transition: 0.3s;
+        & > a {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: left;
+            font-weight: 700;
+            color: var(--Color-background);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        &:hover {
+            background-color: var(--Color-button-menu-hover);
+            & > a {
+                color: var(--Color-background);
             }
         }
     }

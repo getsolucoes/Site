@@ -17,7 +17,7 @@ const StyledContainer = styled.nav`
     @media (min-width: 1100px) {
         display: flex;
         height: 100%;
-        padding: 1.5rem 1.5rem 1rem;
+        padding-left: 1.5rem;
     }
 `;
 
