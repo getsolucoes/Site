@@ -14,39 +14,6 @@ const StyledFloating = styled.div`
     transform-origin: bottom;
     transition: transform 0.3s linear;
 
-    & > button {
-        padding: 15px 20px;
-        border-radius: 12.5rem;
-        width: 65vw;
-        height: 3.5rem;
-        background-color: var(--Color-button-menu);
-        transition: 0.3s;
-        & > a {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--Color-background);
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        @media (min-width: 1100px) {
-            display: none;
-        }
-        @media (min-width: 768px) {
-            width: 80vw;
-            height: 5rem;
-            & > a {
-                font-size: 18px;
-            }
-        }
-        @media (min-width: 400px) {
-            width: 75vw;
-            & > a {
-                font-size: 16px;
-            }
-        }
-    }
-
     & > a {
         display: flex;
         align-items: center;
