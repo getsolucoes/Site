@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
     :root{
             --Color-background: ${({ theme }) => theme.background};
+            --Color-background-hero: ${({ theme }) => theme.background_hero};
             --Color-text-primary: ${({ theme }) => theme.text_primary};
             --Color-text-secondary: #99df0cff;
             --Color-button-menu: ${({ theme }) => theme.button_menu};
