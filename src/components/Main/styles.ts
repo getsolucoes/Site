@@ -3,11 +3,16 @@ import styled from "styled-components";
 const StyledHero = styled.section`
     padding-top: 6.25rem;
     & > div {
-        background: var(--Color-background) url(/hero.png) no-repeat 100% 0;
+        background: #333333ff url(/hero.png) no-repeat 100% 0;
         background-size: cover;
 
         @media (min-width: 420px) {
             background-position-x: 70%;
+        }
+
+        @media (min-width: 650px) {
+            background-position-x: 70%;
+            background-color: var(--Color-background);
         }
     }
 `;
@@ -27,7 +32,7 @@ const StyledContainer = styled.div`
 `;
 
 const StyledText = styled.div`
-    color: var(--Color-text-primary);
+    color: #fff;
     & > h1 {
         font-size: 1.4rem;
         font-weight: 800;
@@ -48,6 +53,9 @@ const StyledText = styled.div`
         & > p {
             font-size: 1.5rem;
         }
+    }
+    @media (min-width: 650px) {
+        color: var(--Color-text-primary);
     }
     @media (min-width: 768px) {
         & > h1 {

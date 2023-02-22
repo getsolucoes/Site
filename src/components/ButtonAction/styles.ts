@@ -77,7 +77,7 @@ const StyledButtonAction = styled.button<iStyledButtonActionProps>`
             case "HERO":
                 return css`
                     border: 3px solid #fff;
-                    border-radius: 2px;
+                    border-radius: 10px;
                     padding: 1.065rem;
                     display: flex;
                     align-items: center;
