@@ -5,17 +5,15 @@ const StyledHero = styled.section`
     & > div {
         background: var(--Color-background) url(/hero.png) no-repeat 100% 0;
         background-size: cover;
+        background-position-x: 85%;
 
         & > div {
             width: 100%;
             background-color: var(--Color-background-hero);
         }
 
-        @media (min-width: 420px) {
-            background-position-x: 70%;
-        }
-
         @media (min-width: 680px) {
+            background-position-x: 70%;
             & > div {
                 background-color: unset;
             }

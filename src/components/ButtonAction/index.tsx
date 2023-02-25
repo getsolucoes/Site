@@ -9,7 +9,7 @@ const ButtonAction = ({ location }: iStyledButtonActionProps) => {
     return (
         <StyledButtonAction location={location}>
             <Link href="/">
-                Quero contratar a GET
+                Quero ser cliente GET
                 {location == "HERO" ? (
                     <Image
                         src="/g_ligth.svg"

@@ -9,10 +9,8 @@ const Header = () => {
         <>
             <StyledHeader>
                 <StyledContainer>
-                    <div>
-                        <Logo />
-                        <MenuMobile />
-                    </div>
+                    <Logo />
+                    <MenuMobile />
                     <Menu />
                 </StyledContainer>
             </StyledHeader>

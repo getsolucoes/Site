@@ -1,15 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FaCloudMoon } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { HiSun } from "react-icons/hi";
 import { useGlobalContext } from "../../../contexts/GlobalContext";
-import { StyledDarkMode } from "../Menu/styles";
+import DarkMode from "../DarkMode";
 import { StyledLogo } from "./styles";
 
 const Logo = () => {
-    const { theme, toggleTheme, setIsClickMobile } = useGlobalContext();
+    const { theme, setIsClickMobile } = useGlobalContext();
     return (
         <StyledLogo>
             <div>
@@ -34,34 +32,7 @@ const Logo = () => {
                     />
                 </Link>
             </div>
-            <button
-                type="button"
-                onClick={() => {
-                    toggleTheme();
-                }}
-            >
-                <StyledDarkMode>
-                    {theme === "light" ? (
-                        <>
-                            <div className="active">
-                                <HiSun />
-                            </div>
-                            <div>
-                                <FaCloudMoon />
-                            </div>
-                        </>
-                    ) : (
-                        <>
-                            <div>
-                                <HiSun />
-                            </div>
-                            <div className="active">
-                                <FaCloudMoon />
-                            </div>
-                        </>
-                    )}
-                </StyledDarkMode>
-            </button>
+            <DarkMode />
         </StyledLogo>
     );
 };

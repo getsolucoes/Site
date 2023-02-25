@@ -10,6 +10,7 @@ const StyledFloating = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
     background-color: rgba(0, 0, 0, 0.2);
     transform-origin: bottom;
     transition: transform 0.3s linear;
@@ -44,6 +45,7 @@ const StyledFloating = styled.div`
     }
 
     @media (min-width: 768px) {
+        gap: 30px;
         padding: 1rem;
     }
 

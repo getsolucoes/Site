@@ -1,0 +1,41 @@
+import React from "react";
+import { HiSun } from "react-icons/hi";
+import { FaCloudMoon } from "react-icons/fa";
+import { useGlobalContext } from "../../../contexts/GlobalContext";
+import { StyledDarkMode } from "./styles";
+
+const DarkMode = () => {
+    const { theme, toggleTheme } = useGlobalContext();
+    return (
+        <button
+            type="button"
+            onClick={() => {
+                toggleTheme();
+            }}
+        >
+            <StyledDarkMode>
+                {theme === "light" ? (
+                    <>
+                        <div className="active">
+                            <HiSun />
+                        </div>
+                        <div>
+                            <FaCloudMoon />
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        <div>
+                            <HiSun />
+                        </div>
+                        <div className="active">
+                            <FaCloudMoon />
+                        </div>
+                    </>
+                )}
+            </StyledDarkMode>
+        </button>
+    );
+};
+
+export default DarkMode;
