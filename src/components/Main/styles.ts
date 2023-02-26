@@ -1,24 +1,7 @@
 import styled from "styled-components";
 
-const StyledHero = styled.section`
-    padding-top: 6.25rem;
-    & > div {
-        background: var(--Color-background) url(/hero.png) no-repeat 100% 0;
-        background-size: cover;
-        background-position-x: 85%;
-
-        & > div {
-            width: 100%;
-            background-color: var(--Color-background-hero);
-        }
-
-        @media (min-width: 680px) {
-            background-position-x: 70%;
-            & > div {
-                background-color: unset;
-            }
-        }
-    }
+const StyledExpect = styled.section`
+    background-color: rgba(0, 0, 0, 0.7);
 `;
 
 const StyledContainer = styled.div`
@@ -29,53 +12,74 @@ const StyledContainer = styled.div`
 
     @media (min-width: 1024px) {
         padding: 4.5rem 0;
-        height: 41.875rem;
-        display: flex;
-        align-items: flex-start;
     }
-`;
 
-const StyledText = styled.div`
-    color: var(--Color-text-primary);
-    & > h1 {
-        font-size: 1.4rem;
+    & > h2 {
+        margin-bottom: 2.5rem;
+
+        font-size: 1.625rem;
         font-weight: 800;
-        margin-bottom: 1.5rem;
-        width: 15rem;
-    }
-    & > p {
-        font-family: "Raleway", sans-serif;
-        font-size: 1.175rem;
-        margin-bottom: 1.5rem;
-        font-weight: 300;
-        max-width: 16.875rem;
-    }
-    @media (min-width: 370px) {
-        & > h1 {
-            font-size: 2rem;
-        }
-        & > p {
-            font-size: 1.5rem;
+        word-spacing: 15px;
+        letter-spacing: 5px;
+        color: #fff;
+
+        @media (min-width: 1024px) {
+            margin-bottom: 4.5rem;
+
+            font-size: 3rem;
         }
     }
-    @media (min-width: 768px) {
-        & > h1 {
-            width: 26rem;
-        }
-    }
-    @media (min-width: 1024px) {
-        padding-top: 2rem;
-        & > h1 {
-            font-size: 3.2rem;
-            margin-bottom: 2rem;
-            width: 35.25rem;
-        }
-        & > p {
-            font-size: 1.475rem;
-            margin-bottom: 2.5rem;
-            max-width: 31.25rem;
+
+    & > ul {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 2rem;
+
+        li {
+            width: 100%;
+
+            & > div {
+                padding-bottom: 1.25rem;
+
+                display: flex;
+                align-items: center;
+
+                color: var(--Color-text-secondary);
+
+                border-bottom: 1px solid var(--Color-text-secondary);
+
+                @media (min-width: 1024px) {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    text-align: left;
+                }
+
+                & > svg {
+                    font-size: 50px;
+                }
+
+                & > strong {
+                    margin-left: 10px;
+
+                    font-size: 1.7rem;
+
+                    @media (min-width: 1024px) {
+                        margin-top: 15px;
+                        margin-left: unset;
+                    }
+                }
+            }
+
+            & > p {
+                margin-top: 1.25rem;
+                font-size: 1.2rem;
+                color: #fff;
+                line-height: 1.4;
+            }
         }
     }
 `;
 
-export { StyledHero, StyledContainer, StyledText };
+export { StyledExpect, StyledContainer };
