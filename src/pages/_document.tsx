@@ -33,6 +33,10 @@ export default class MyDocument extends Document {
         return (
             <Html lang="pt-BR">
                 <Head>
+                    <meta
+                        name="google-site-verification"
+                        content="a5HXpWfT3BQBVFQ1coCH6Fz4pbvBD5O6qUedn6QQHTM"
+                    />
                     <link
                         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@700&display=swap"
                         rel="stylesheet"
