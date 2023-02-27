@@ -6,6 +6,7 @@ import Document, {
     NextScript,
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
+import Analytics from "../components/Analytics";
 
 export default class MyDocument extends Document {
     static async getInitialProps(ctx: DocumentContext) {
@@ -30,7 +31,7 @@ export default class MyDocument extends Document {
     }
     render(): JSX.Element {
         return (
-            <Html>
+            <Html lang="pt-BR">
                 <Head>
                     <link
                         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@700&display=swap"
@@ -40,6 +41,7 @@ export default class MyDocument extends Document {
                 <body>
                     <Main />
                     <NextScript />
+                    <Analytics />
                 </body>
             </Html>
         );
