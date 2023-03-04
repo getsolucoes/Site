@@ -7,10 +7,15 @@ import { StyledContainer, StyledMenuMobile } from "./styles";
 
 const MenuMobile = () => {
     const { theme, isClickMobile, setIsClickMobile } = useGlobalContext();
+    const handleBackdropClick = (event) => {
+        if (event) event.preventDefault();
+        if (event.target.id !== "backdrop") return;
+        setIsClickMobile(false);
+    };
     return (
         <>
             {isClickMobile && (
-                <StyledMenuMobile>
+                <StyledMenuMobile id="backdrop" onClick={handleBackdropClick}>
                     <StyledContainer>
                         <div>
                             <Link href="/">
