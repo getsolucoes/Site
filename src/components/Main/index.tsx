@@ -5,6 +5,7 @@ import { FaClipboardCheck } from "react-icons/fa";
 import Hero from "./Hero";
 import { StyledContainer, StyledExpect } from "./styles";
 import Image from "next/image";
+import Depoimentos from "./Depoimentos";
 
 const Main = () => {
     return (
@@ -65,6 +66,7 @@ const Main = () => {
                     </ul>
                 </StyledContainer>
             </StyledExpect>
+            <Depoimentos />
         </main>
     );
 };
