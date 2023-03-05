@@ -1,7 +1,7 @@
 import { NextSeo } from "next-seo";
-import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 import Floating from "../components/Floating";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Main from "../components/Main";
 import { useGlobalContext } from "../contexts/GlobalContext";
@@ -22,6 +22,7 @@ export default function Home() {
                 <Header />
                 <Floating />
                 <Main />
+                <Footer />
             </ThemeProvider>
         </>
     );

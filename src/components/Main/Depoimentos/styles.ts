@@ -82,16 +82,24 @@ const StyledContainer = styled.div`
     & > a {
         font-size: 1.375rem;
         font-weight: 700;
-        border: 3px solid #fff;
+        border: 3px solid var(--Color-text-secondary);
         border-radius: 2px;
         padding: 1.065rem;
         display: flex;
         align-items: center;
         justify-content: center;
         transition: all 0.3s ease-in-out;
-        color: #fff;
+        color: var(--Color-text-secondary);
         margin: 2.5rem auto 0;
         max-width: 44.5rem;
+        transition: all 0.3s ease-in-out;
+
+        @media (min-width: 1100px) {
+            &:hover {
+                color: #fff;
+                background-color: var(--Color-text-secondary);
+            }
+        }
     }
 `;
 
