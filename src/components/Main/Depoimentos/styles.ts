@@ -78,6 +78,21 @@ const StyledContainer = styled.div`
             font-size: 3rem;
         }
     }
+
+    & > a {
+        font-size: 1.375rem;
+        font-weight: 700;
+        border: 3px solid #fff;
+        border-radius: 2px;
+        padding: 1.065rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease-in-out;
+        color: #fff;
+        margin: 2.5rem auto 0;
+        max-width: 44.5rem;
+    }
 `;
 
 const StyledTestimonials = styled.div`
@@ -145,6 +160,14 @@ const StyledTestimonials = styled.div`
                 line-height: 1.4;
                 font-size: 0.75rem;
             }
+        }
+    }
+
+    & > .responsivo {
+        display: none;
+
+        @media (min-width: 1024px) {
+            display: flex;
         }
     }
 `;
