@@ -1,5 +1,4 @@
-import React from "react";
-import ButtonAction from "../../ButtonAction";
+import ButtonAction from "../../../ButtonAction";
 import { StyledContainer, StyledHero, StyledText } from "./styles";
 
 const Hero = () => {

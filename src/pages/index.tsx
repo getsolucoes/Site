@@ -1,9 +1,6 @@
 import { NextSeo } from "next-seo";
 import { ThemeProvider } from "styled-components";
-import Floating from "../components/Floating";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import Main from "../components/Main";
+import HomePage from "../components/Home";
 import { useGlobalContext } from "../contexts/GlobalContext";
 import GlobalStyle from "../styles/global";
 import { darkTheme, lightTheme } from "../styles/theme";
@@ -19,10 +16,7 @@ export default function Home() {
             />
             <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
                 <GlobalStyle />
-                <Header />
-                <Floating />
-                <Main />
-                <Footer />
+                <HomePage />
             </ThemeProvider>
         </>
     );

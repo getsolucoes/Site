@@ -1,4 +1,3 @@
-import React from "react";
 import { HiSun } from "react-icons/hi";
 import { FaCloudMoon } from "react-icons/fa";
 import { useGlobalContext } from "../../../contexts/GlobalContext";

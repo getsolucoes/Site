@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import Options from "../Options";
 import { IoClose } from "react-icons/io5";
 import { useGlobalContext } from "../../../contexts/GlobalContext";
-import Options from "../Options";
 import { StyledContainer, StyledMenuMobile } from "./styles";
 
 const MenuMobile = () => {

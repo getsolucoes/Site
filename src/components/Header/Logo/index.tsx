@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import DarkMode from "../DarkMode";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useGlobalContext } from "../../../contexts/GlobalContext";
-import DarkMode from "../DarkMode";
 import { StyledLogo } from "./styles";
 
 const Logo = () => {

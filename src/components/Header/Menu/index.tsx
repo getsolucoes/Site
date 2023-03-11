@@ -1,8 +1,7 @@
-import React from "react";
-import { StyledMenu } from "./styles";
 import Options from "../Options";
 import ButtonAction from "../../ButtonAction";
 import DarkMode from "../DarkMode";
+import { StyledMenu } from "./styles";
 
 const Menu = () => {
     return (

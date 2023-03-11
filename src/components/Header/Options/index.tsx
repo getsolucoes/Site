@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 import { useGlobalContext } from "../../../contexts/GlobalContext";
 import { StyledOptions } from "./styles";
 

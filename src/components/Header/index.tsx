@@ -1,8 +1,7 @@
-import React from "react";
-import { StyledContainer, StyledHeader } from "./styles";
 import Logo from "./Logo";
 import Menu from "./Menu";
 import MenuMobile from "./MenuMobile";
+import { StyledContainer, StyledHeader } from "./styles";
 
 const Header = () => {
     return (

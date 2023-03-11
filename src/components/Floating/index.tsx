@@ -1,7 +1,6 @@
 import Link from "next/link";
-import React from "react";
-import { BsWhatsapp } from "react-icons/bs";
 import ButtonAction from "../ButtonAction";
+import { BsWhatsapp } from "react-icons/bs";
 import { StyledFloating } from "./styles";
 
 const Floating = () => {
