@@ -12,7 +12,7 @@ export default function Home() {
             <NextSeo
                 title="Get Soluções"
                 description="Manutenção em: Notebook's, Computadores PC Gamer, PS2, PS3, PS4"
-                canonical="https://get-solucoes.vercel.app/"
+                canonical="https://solucoesget.com/"
             />
             <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
                 <GlobalStyle />

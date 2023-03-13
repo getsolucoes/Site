@@ -1,9 +1,11 @@
+import Script from "next/script";
+
 const Analytics = () => {
     return (
         <>
-            <script
+            <Script
                 async
-                src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING}`}
+                src={"https://www.googletagmanager.com/gtag/js?id=G-B3QGPS96HR"}
             />
             <script
                 dangerouslySetInnerHTML={{
@@ -11,7 +13,7 @@ const Analytics = () => {
                         window.dataLayer = window.dataLayer || [];
                         function gtag(){dataLayer.push(arguments);}
                         gtag('js', new Date());
-                        gtag('config', ${process.env.NEXT_PUBLIC_GA_TRACKING}, {
+                        gtag('config', 'G-B3QGPS96HR', {
                             page_path: window.location.pathname,
                         });
                         `,

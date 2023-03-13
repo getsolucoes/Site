@@ -8,7 +8,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
     const fields = [
         {
-            loc: "https://get-solucoes.vercel.app/",
+            loc: "https://solucoesget.com/",
             lastmod: new Date().toISOString(),
         },
     ];

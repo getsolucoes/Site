@@ -4,7 +4,7 @@ const config: DefaultSeoProps = {
     openGraph: {
         type: "website",
         locale: "en_US",
-        url: "https://get-solucoes.vercel.app/",
+        url: "https://solucoesget.com/",
         siteName: "Get Soluções",
     },
 };
