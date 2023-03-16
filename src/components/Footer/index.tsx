@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { StyledContainer, StyledFooter } from "./styles";
+import { StyledContainer, StyledContent, StyledFooter } from "./styles";
 
 const Footer = () => {
     return (
@@ -10,8 +10,8 @@ const Footer = () => {
                     className="mobile"
                     src="get_footer.svg"
                     alt="Get Soluções"
-                    width={125}
-                    height={55}
+                    width={80}
+                    height={35}
                 />
                 <Image
                     className="unset_mobile"
@@ -20,10 +20,10 @@ const Footer = () => {
                     width={270}
                     height={120}
                 />
-                <div>
+                <StyledContent>
                     <div>
                         <h3>GET na rede</h3>
-                        <ul>
+                        <ul className="social">
                             <li>
                                 <Link href="" target="_blank">
                                     Facebook
@@ -46,7 +46,7 @@ const Footer = () => {
                     </div>
                     <div>
                         <h3>Contato</h3>
-                        <ul>
+                        <ul className="contact">
                             <li>
                                 Rua João Rodrigues Pinto, 254 - Centro - Santa
                                 Quitéria - CE
@@ -59,7 +59,7 @@ const Footer = () => {
                             </li>
                         </ul>
                     </div>
-                </div>
+                </StyledContent>
             </StyledContainer>
             <div className="footer">
                 <p>© 2023 Get Soluções. All rights reserved.</p>

@@ -51,47 +51,64 @@ const StyledContainer = styled.div`
             position: static;
         }
     }
+`;
+
+const StyledContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    grid-gap: 2rem;
+    gap: 2rem;
+
+    @media (min-width: 1024px) {
+        flex-direction: row;
+    }
 
     & > div {
-        display: flex;
-        flex-direction: column;
-        grid-gap: 2rem;
-        gap: 2rem;
-
         @media (min-width: 1024px) {
-            flex-direction: row;
+            flex: 1 1;
         }
+        & > h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        & > .social {
+            column-count: 2;
+            width: fit-content;
+            font-size: 1rem;
 
-        & > div {
             @media (min-width: 1024px) {
-                flex: 1 1;
+                column-count: 1;
             }
-            & > h3 {
-                font-size: 1.25rem;
-                font-weight: 800;
-                text-transform: uppercase;
+
+            & > li {
+                color: #fff;
                 margin-bottom: 1.5rem;
-            }
-            & > ul {
-                column-count: 2;
-                width: fit-content;
-                font-size: 1rem;
 
-                @media (min-width: 1024px) {
-                    column-count: 1;
-                }
-
-                & > li {
+                & > a {
                     color: #fff;
-                    margin-bottom: 1.5rem;
+                    @media (min-width: 1024px) {
+                        transition: 0.3s;
+                        &:hover {
+                            color: var(--Color-text-secondary);
+                        }
+                    }
+                }
+            }
+        }
+        & > .contact {
+            & > li {
+                color: #fff;
+                margin: 1rem 0;
+                font-weight: 300;
 
-                    & > a {
-                        color: #fff;
-                        @media (min-width: 1024px) {
-                            transition: 0.3s;
-                            &:hover {
-                                color: var(--Color-text-secondary);
-                            }
+                & > a {
+                    color: #fff;
+                    @media (min-width: 1024px) {
+                        transition: 0.3s;
+                        &:hover {
+                            color: var(--Color-text-secondary);
                         }
                     }
                 }
@@ -100,4 +117,4 @@ const StyledContainer = styled.div`
     }
 `;
 
-export { StyledFooter, StyledContainer };
+export { StyledFooter, StyledContainer, StyledContent };
