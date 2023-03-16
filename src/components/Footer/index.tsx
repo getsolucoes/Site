@@ -25,7 +25,10 @@ const Footer = () => {
                         <h3>GET na rede</h3>
                         <ul className="social">
                             <li>
-                                <Link href="" target="_blank">
+                                <Link
+                                    href="https://www.facebook.com/getsolucoes"
+                                    target="_blank"
+                                >
                                     Facebook
                                 </Link>
                             </li>

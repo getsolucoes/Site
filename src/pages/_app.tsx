@@ -3,11 +3,25 @@ import { GlobalWrapper } from "../contexts/GlobalContext";
 import { DefaultSeo } from "next-seo";
 import SEO from "../../next-seo.config";
 import Head from "next/head";
+import Analytics from "../components/Analytics";
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
         <>
+            <Analytics />
             <Head>
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Get Soluções" />
+                <meta
+                    property="og:description"
+                    content="Manutenção em: Notebook's, Computadores PC Gamer, PS2, PS3, PS4"
+                />
+                <meta property="og:image" content="get_comp.png" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:heigth" content="630" />
+                <meta property="og:locale" content="pt_BR" />
+                <meta property="og:url" content="https://solucoesget.com/" />
+                <meta property="og:site_name" content="Get Soluções" />
                 <meta
                     name="viewport"
                     content="width=device-width, initial-scale=1"
