@@ -78,29 +78,6 @@ const StyledContainer = styled.div`
             font-size: 3rem;
         }
     }
-
-    & > a {
-        font-size: 1.375rem;
-        font-weight: 700;
-        border: 3px solid var(--Color-text-secondary);
-        border-radius: 2px;
-        padding: 1.065rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease-in-out;
-        color: var(--Color-text-secondary);
-        margin: 2.5rem auto 0;
-        max-width: 44.5rem;
-        transition: all 0.3s ease-in-out;
-
-        @media (min-width: 1100px) {
-            &:hover {
-                color: #fff;
-                background-color: var(--Color-text-secondary);
-            }
-        }
-    }
 `;
 
 const StyledTestimonials = styled.div`
@@ -110,64 +87,23 @@ const StyledTestimonials = styled.div`
     grid-gap: 1rem;
     gap: 1rem;
     margin: 0 auto;
+    padding: 0 50px 50px 60px;
 
     @media (min-width: 1024px) {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        height: 37rem;
-    }
-
-    @media (min-width: 1050px) {
-        height: 36rem;
-    }
-
-    @media (min-width: 1100px) {
-        height: 34.5rem;
-    }
-
-    @media (min-width: 1190px) {
-        height: 31rem;
-    }
-
-    @media (min-width: 1300px) {
-        height: 30rem;
     }
 
     & > div {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        height: 100%;
         grid-gap: 1rem;
         gap: 1rem;
 
         @media (min-width: 1024px) {
             width: 31%;
-            height: 100%;
-        }
-
-        & > article {
-            width: 100%;
-            background-color: var(--Color-background);
-            color: var(--Color-text-primary);
-            font-size: 0.75rem;
-            border: 1px solid var(--Color-background);
-            box-shadow: 0 2px 4px 3px rgb(0 0 0 / 20%);
-            border-radius: 20px;
-            padding: 1rem 1.5rem;
-            flex-direction: column;
-            position: relative;
-            flex-grow: 1;
-
-            @media (min-width: 1024px) {
-                padding: 1.5rem;
-            }
-
-            & > p {
-                line-height: 1.4;
-                font-size: 0.75rem;
-            }
         }
     }
 
@@ -180,28 +116,4 @@ const StyledTestimonials = styled.div`
     }
 `;
 
-const StyledPerfil = styled.div`
-    font-size: 0.75rem;
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-
-    & > div {
-        z-index: 1;
-        margin-left: 1rem;
-
-        & > h3 {
-            margin-bottom: 0.25rem;
-            color: var(--Color-text-secondary);
-            font-weight: 700;
-            font-family: Montserrat, sans-serif;
-            line-height: 1.2rem;
-        }
-        & > span {
-            display: block;
-            color: var(--Color-text-primary);
-        }
-    }
-`;
-
-export { StyledDepoimentos, StyledContainer, StyledTestimonials, StyledPerfil };
+export { StyledDepoimentos, StyledContainer, StyledTestimonials };
