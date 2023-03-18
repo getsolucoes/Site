@@ -9,14 +9,17 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@hookform/resolvers": "^2.9.11",
         "framer-motion-carousel": "^2.0.1",
         "next": "13.1.6",
         "next-seo": "^5.15.0",
         "next-sitemap": "^3.1.54",
         "react": "18.2.0",
         "react-dom": "18.2.0",
+        "react-hook-form": "^7.43.7",
         "react-icons": "^4.7.1",
-        "styled-components": "^5.3.6"
+        "styled-components": "^5.3.6",
+        "yup": "^1.0.2"
     },
     "devDependencies": {
         "@types/node": "18.14.0",
