@@ -8,6 +8,7 @@ const DarkMode = () => {
     return (
         <button
             type="button"
+            aria-label="alternar modo escuro"
             onClick={() => {
                 toggleTheme();
             }}

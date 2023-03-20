@@ -7,7 +7,11 @@ const Floating = () => {
     return (
         <StyledFloating>
             <ButtonAction location="FLOATING" />
-            <Link href="https://wa.me/5588996931410" target="_blank">
+            <Link
+                aria-label="Entre em contato pelo WhatsApp"
+                href="https://wa.me/5588996931410"
+                target="_blank"
+            >
                 <BsWhatsapp />
             </Link>
         </StyledFloating>
