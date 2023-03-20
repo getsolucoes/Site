@@ -32,6 +32,7 @@ const MenuMobile = () => {
                             </Link>
                             <button
                                 type="button"
+                                aria-label="fechar menu mobile"
                                 onClick={() => {
                                     setIsClickMobile(false);
                                 }}

@@ -12,6 +12,7 @@ const Logo = () => {
             <div>
                 <button
                     type="button"
+                    aria-label="abrir menu mobile"
                     onClick={() => {
                         setIsClickMobile(true);
                     }}
