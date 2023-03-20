@@ -11,6 +11,10 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
             loc: "https://solucoesget.com/",
             lastmod: new Date().toISOString(),
         },
+        {
+            loc: "https://solucoesget.com/contato/",
+            lastmod: new Date().toISOString(),
+        },
     ];
 
     return getServerSideSitemap(ctx, fields);
