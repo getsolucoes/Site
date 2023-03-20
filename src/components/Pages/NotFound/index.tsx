@@ -1,7 +1,8 @@
 import Image from "next/image";
-import { useGlobalContext } from "../../contexts/GlobalContext";
-import Footer from "../Footer";
-import Header from "../Header";
+import { useGlobalContext } from "../../../contexts/GlobalContext";
+import Floating from "../../Floating";
+import Footer from "../../Footer";
+import Header from "../../Header";
 import { Styled404, StyledContent } from "./styles";
 
 const NotFound = () => {
@@ -9,6 +10,7 @@ const NotFound = () => {
     return (
         <>
             <Header />
+            <Floating />
             <Styled404>
                 <StyledContent>
                     <h1>404</h1>

@@ -1,6 +1,6 @@
 import { NextSeo } from "next-seo";
 import { ThemeProvider } from "styled-components";
-import HomePage from "../components/Home";
+import HomePage from "../components/Pages/Home";
 import { useGlobalContext } from "../contexts/GlobalContext";
 import GlobalStyle from "../styles/global";
 import { darkTheme, lightTheme } from "../styles/theme";
