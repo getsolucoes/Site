@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StyledHero = styled.section`
     padding-top: 6.25rem;
     & > div {
-        background: var(--Color-background) url(/hero.png) no-repeat 100% 0;
+        background: var(--Color-background) url(/hero.webp) no-repeat 100% 0;
         background-size: cover;
         background-position-x: 85%;
 
