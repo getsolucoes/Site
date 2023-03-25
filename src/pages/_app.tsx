@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 <meta property="og:title" content="Get Soluções" />
                 <meta
                     property="og:description"
-                    content="Manutenção em: Notebook's, Computadores PC Gamer, PS2, PS3, PS4"
+                    content="Assistência em: Notebook's, Computadores, PC Gamer, PS2, PS3, PS4. A melhor e mais completa para o seu equipamento."
                 />
                 <meta property="og:image" content="get_comp.png" />
                 <meta property="og:image:width" content="1200" />

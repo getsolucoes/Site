@@ -10,12 +10,18 @@ const StyledAction = styled.div`
         border-radius: 48px;
         border: 0px;
         padding: 16px 28px;
-        transition: opacity 0.2s ease-in 0s;
+        transition: 1s;
         & > a {
             color: rgb(9, 16, 19);
             font-weight: 600;
             font-size: 1.125rem;
             text-decoration: none;
+        }
+        @media (min-width: 768px) {
+            &:hover {
+                background-color: white;
+                transition: 1s;
+            }
         }
     }
     & > small {
