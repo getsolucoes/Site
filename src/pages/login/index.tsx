@@ -12,12 +12,12 @@ import { darkTheme, lightTheme } from "../../styles/theme";
 import { StyledContent, StyledLogin, StyledTitle } from "./styles";
 
 const schema = yup.object({
-    email: yup.string().required("Email é obrigatório"),
+    username: yup.string().required("Email é obrigatório"),
     password: yup.string().required("Senha é obrigatório"),
 });
 
 const Login = () => {
-    const { theme } = useGlobalContext();
+    const { theme, login } = useGlobalContext();
     const {
         register,
         handleSubmit,
@@ -34,7 +34,21 @@ const Login = () => {
                 <StyledContent>
                     <StyledTitle>
                         <h1>Log in to your Linktree</h1>
-                        <form></form>
+                        <form onSubmit={handleSubmit(login)}>
+                            <input
+                                type="text"
+                                placeholder="Digite aqui seu email"
+                                {...register("username")}
+                            />
+                            <input
+                                type="password"
+                                placeholder="Digite aqui sua senha"
+                                {...register("password")}
+                            />
+                            <button type="submit" disabled={!isValid}>
+                                Entrar
+                            </button>
+                        </form>
                     </StyledTitle>
                 </StyledContent>
             </StyledLogin>
