@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledHead = styled.section`
-    background: url(/getback.png) center bottom no-repeat;
+    background: url(/getback.webp) center bottom no-repeat;
     width: 100%;
     min-height: 100vh;
     display: flex;
