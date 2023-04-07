@@ -1,12 +1,13 @@
 import { NextSeo } from "next-seo";
 import { ThemeProvider } from "styled-components";
-import ContatoPage from "../components/Pages/Contato";
-import { useGlobalContext } from "../contexts/GlobalContext";
-import GlobalStyle from "../styles/global";
-import { darkTheme, lightTheme } from "../styles/theme";
+import { useGlobalContext } from "../../contexts/GlobalContext";
+import GlobalStyle from "../../styles/global";
+import { lightTheme, darkTheme } from "../../styles/theme";
+import NotFoundPascoa from "../../components/Pages/Pascoa/NotFound";
 
-export default function Contato() {
+export default function Pascoa() {
     const { theme } = useGlobalContext();
+
     return (
         <>
             <NextSeo
@@ -16,7 +17,7 @@ export default function Contato() {
             />
             <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
                 <GlobalStyle />
-                <ContatoPage />
+                <NotFoundPascoa />
             </ThemeProvider>
         </>
     );

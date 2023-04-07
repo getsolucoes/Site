@@ -8,14 +8,14 @@ const Footer = () => {
             <StyledContainer>
                 <Image
                     className="mobile"
-                    src="get_footer.svg"
+                    src="/get_footer.svg"
                     alt="Get Soluções"
                     width={80}
                     height={35}
                 />
                 <Image
                     className="unset_mobile"
-                    src="get_footer.svg"
+                    src="/get_footer.svg"
                     alt="Get Soluções"
                     width={270}
                     height={120}
