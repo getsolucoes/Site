@@ -9,10 +9,10 @@ export async function patchLocationGet(id: string) {
     });
 
     if (location) {
-        if (location.expiredAt && moment().isSameOrAfter(location.expiredAt)) {
+        if (location.expiredAt && moment.utc().isSameOrAfter(location.expiredAt)) {
             const locationPatch = await prisma.location.update({
                 data: {
-                    expiredAt: moment().add(3, "minute").format(),
+                    expiredAt: moment.utc().add(3, "minute").format(),
                 },
                 where: { id },
             });
@@ -20,7 +20,7 @@ export async function patchLocationGet(id: string) {
             return locationPatch;
         } else if (!location.expiredAt) {
             const locationPatch = await prisma.location.update({
-                data: { expiredAt: moment().add(3, "minute").format() },
+                data: { expiredAt: moment.utc().add(3, "minute").format() },
                 where: { id },
             });
 

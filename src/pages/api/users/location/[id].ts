@@ -20,7 +20,7 @@ export default async function handler(
             });
             if (
                 location.expiredAt &&
-                moment().isSameOrBefore(location.expiredAt)
+                moment.utc().isSameOrBefore(location.expiredAt)
             ) {
                 const user = await prisma.user.create({
                     data: { ...data, location: { connect: { id } } },

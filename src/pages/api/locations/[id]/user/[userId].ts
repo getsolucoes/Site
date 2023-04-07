@@ -18,7 +18,7 @@ export default async function handler(
                 where: { AND: { id, userId: null } },
             });
 
-            if (location && moment().isSameOrBefore(location.expiredAt)) {
+            if (location && moment.utc().isSameOrBefore(location.expiredAt)) {
                 const locationPatch = await prisma.location.update({
                     where: { id },
                     data: { userId },
