@@ -6,7 +6,7 @@ import { lightTheme, darkTheme } from "../../styles/theme";
 import { GetStaticProps } from "next";
 import { getLocation } from "../../lib/locations";
 import ProtectPage from "../../components/Pages/Pascoa/Protect";
-import NotFoundPascoa from "../../components/Pages/Pascoa/NotFound";
+import Modal from "../../components/Pages/Pascoa/Modal";
 
 interface iPascoaProps {
     location: {
@@ -28,11 +28,8 @@ export default function Pascoa({ location }: iPascoaProps) {
             />
             <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
                 <GlobalStyle />
-                {location ? (
-                    <ProtectPage id={location.id} />
-                ) : (
-                    <NotFoundPascoa />
-                )}
+                <ProtectPage id={location?.id} />
+                <Modal isDelete />
             </ThemeProvider>
         </>
     );
@@ -41,6 +38,7 @@ export default function Pascoa({ location }: iPascoaProps) {
 export const getStaticPaths = async () => {
     return {
         paths: [
+            { params: { id: "1" } },
             { params: { id: "640456ce-d264-48ea-824d-3a29a22a1b02" } },
             { params: { id: "9c328118-348f-4482-85e7-40bc8e58dddb" } },
         ],

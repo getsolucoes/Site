@@ -9,7 +9,6 @@ import {
 } from "react";
 import { iLocation } from "../interfaces";
 import { api } from "../services/api";
-import { useRouter } from "next/router";
 
 interface iGlobalContextProps {
     children: ReactNode;
@@ -24,6 +23,13 @@ interface iGlobalContext {
     setLoading: Dispatch<SetStateAction<boolean>>;
     location: iLocation;
     loadLocation: (id: string) => Promise<void>;
+    modal: iModal;
+    setModal: Dispatch<SetStateAction<iModal>>;
+}
+
+interface iModal {
+    isView: boolean;
+    name?: string;
 }
 
 const GlobalContext = createContext({} as iGlobalContext);
@@ -33,7 +39,7 @@ function GlobalWrapper({ children }: iGlobalContextProps) {
     const [isClickMobile, setIsClickMobile] = useState(false);
     const [loading, setLoading] = useState(false);
     const [location, setLocation] = useState<iLocation>();
-    const router = useRouter();
+    const [modal, setModal] = useState<iModal>({ isView: false });
 
     const toggleTheme = () => {
         if (theme === "light") {
@@ -58,7 +64,7 @@ function GlobalWrapper({ children }: iGlobalContextProps) {
             setLoading(false);
         } catch (error) {
             setLoading(false);
-            router.replace("/pascoa");
+            setModal({ isView: true, name: "Link Expirado" });
         }
     };
 
@@ -71,6 +77,8 @@ function GlobalWrapper({ children }: iGlobalContextProps) {
         setLoading,
         location,
         loadLocation,
+        modal,
+        setModal,
     };
 
     return (

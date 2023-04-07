@@ -1,9 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import Modal from "./Modal";
 import { StyledContainer, StyledForm, StyledText } from "./styles";
 import Header from "./Header";
 import Input from "./Input";
@@ -13,17 +13,24 @@ import { api } from "../../../services/api";
 import formatPhone from "../../../scripts/formatPhone";
 import Loading from "./Loading";
 import { useGlobalContext } from "../../../contexts/GlobalContext";
+import moment from "moment";
 
 const PascoaPage = () => {
-    const { setLoading, location } = useGlobalContext();
+    const { setLoading, location, setModal } = useGlobalContext();
     const router = useRouter();
-    const [totalSecond, setTotalSecond] = useState(2 * 60);
+    const date = moment.utc();
+    const expired = moment.utc(location.expiredAt);
+    const seconds = expired.diff(date, "second");
+    const [totalSecond, setTotalSecond] = useState(seconds);
     const minute = Math.floor(totalSecond / 60);
     const second = totalSecond % 60;
 
     useEffect(() => {
         if (totalSecond === 0) {
-            return;
+            setModal({
+                isView: true,
+                name: "Tempo Esgotado",
+            });
         } else {
             setTimeout(() => {
                 setTotalSecond(totalSecond - 1);
@@ -93,7 +100,10 @@ const PascoaPage = () => {
                                 }
                             } catch {
                                 setLoading(false);
-                                <Modal name="Tempo Esgotado" isDelete />;
+                                setModal({
+                                    isView: true,
+                                    name: "Tempo Esgotado",
+                                });
                             }
                         })}
                     >
@@ -121,7 +131,6 @@ const PascoaPage = () => {
             </StyledContainer>
             <Footer />
             <Loading />
-            <>{!totalSecond && <Modal name="Tempo Esgotado" isDelete />}</>
         </>
     );
 };

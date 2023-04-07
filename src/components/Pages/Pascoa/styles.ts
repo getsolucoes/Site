@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 
 export interface iStyledContainerProps {
     isHeader?: boolean;
-    isBanner?: boolean;
 }
 
 const StyledContainer = styled.div<iStyledContainerProps>`
@@ -11,15 +10,10 @@ const StyledContainer = styled.div<iStyledContainerProps>`
     justify-content: center;
     padding: 20px 10px;
     color: var(--Color-text-primary);
-    ${({ isHeader, isBanner }) => {
+    ${({ isHeader }) => {
         if (isHeader) {
             return css`
                 box-shadow: 0 0 4px 3px rgb(0 0 0 / 20%);
-            `;
-        }
-        if (isBanner) {
-            return css`
-                padding: 0;
             `;
         }
     }}
@@ -30,20 +24,6 @@ const StyledContainer = styled.div<iStyledContainerProps>`
         justify-content: center;
         width: 80%;
         max-width: 780px;
-        ${({ isBanner }) => {
-            if (isBanner) {
-                return css`
-                    width: 100%;
-                    height: 100vh;
-                    max-width: unset;
-                    align-items: center;
-                    position: absolute;
-                    & > img {
-                        object-fit: contain;
-                    }
-                `;
-            }
-        }};
     }
 `;
 

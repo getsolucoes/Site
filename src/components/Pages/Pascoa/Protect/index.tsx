@@ -11,9 +11,7 @@ const ProtectPage = ({ id }: iProtectPageProps) => {
     const { loadLocation, location } = useGlobalContext();
 
     useEffect(() => {
-        if (location?.id !== id) {
-            loadLocation(id);
-        }
+        loadLocation(id);
     }, []);
 
     return location && <PascoaPage />;
