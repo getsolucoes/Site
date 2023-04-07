@@ -41,8 +41,8 @@ export default function Pascoa({ location }: iPascoaProps) {
 export const getStaticPaths = async () => {
     return {
         paths: [
-            { params: { id: "a0080d04-8f0c-4bd7-8a0a-4ec25a6c84ae" } },
-            { params: { id: "d9045d3e-96cc-4961-8461-9436a2d880b4" } },
+            { params: { id: "8fa7817d-6f76-404d-9728-490dcc65fde7" } },
+            { params: { id: "32838a4f-9be1-404c-a1fe-49ee79bfcf16" } },
         ],
         fallback: "blocking",
     };
