@@ -25,7 +25,7 @@ export default async function handler(
                 ) {
                     const locationPatch = await prisma.location.update({
                         data: {
-                            expiredAt: moment.utc().add(2, "minute").format(),
+                            expiredAt: moment.utc().add(3, "minute").format(),
                         },
                         where: { id },
                     });
@@ -34,7 +34,7 @@ export default async function handler(
                 } else if (!location.expiredAt) {
                     const locationPatch = await prisma.location.update({
                         data: {
-                            expiredAt: moment.utc().add(2, "minute").format(),
+                            expiredAt: moment.utc().add(3, "minute").format(),
                         },
                         where: { id },
                     });

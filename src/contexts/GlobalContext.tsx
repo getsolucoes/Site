@@ -7,6 +7,9 @@ import {
     Dispatch,
     SetStateAction,
 } from "react";
+import { iLocation } from "../interfaces";
+import { api } from "../services/api";
+import { useRouter } from "next/router";
 
 interface iGlobalContextProps {
     children: ReactNode;
@@ -19,6 +22,8 @@ interface iGlobalContext {
     setIsClickMobile: Dispatch<SetStateAction<boolean>>;
     loading: boolean;
     setLoading: Dispatch<SetStateAction<boolean>>;
+    location: iLocation;
+    loadLocation: (id: string) => Promise<void>;
 }
 
 const GlobalContext = createContext({} as iGlobalContext);
@@ -27,6 +32,8 @@ function GlobalWrapper({ children }: iGlobalContextProps) {
     const [theme, setTheme] = useState("light");
     const [isClickMobile, setIsClickMobile] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [location, setLocation] = useState<iLocation>();
+    const router = useRouter();
 
     const toggleTheme = () => {
         if (theme === "light") {
@@ -43,6 +50,18 @@ function GlobalWrapper({ children }: iGlobalContextProps) {
         localTheme && setTheme(localTheme);
     }, []);
 
+    const loadLocation = async (id: string) => {
+        try {
+            setLoading(true);
+            const response = await api.patch(`locations/${id}/user`);
+            setLocation(response.data);
+            setLoading(false);
+        } catch (error) {
+            setLoading(false);
+            router.replace("/pascoa");
+        }
+    };
+
     let sharedState = {
         theme,
         toggleTheme,
@@ -50,6 +69,8 @@ function GlobalWrapper({ children }: iGlobalContextProps) {
         setIsClickMobile,
         loading,
         setLoading,
+        location,
+        loadLocation,
     };
 
     return (

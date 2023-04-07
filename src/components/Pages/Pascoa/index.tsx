@@ -10,13 +10,12 @@ import Input from "./Input";
 import Button from "./Button";
 import Footer from "../../Footer";
 import { api } from "../../../services/api";
-import { iPascoaProps } from "../../../pages/pascoa/[id]";
 import formatPhone from "../../../scripts/formatPhone";
 import Loading from "./Loading";
 import { useGlobalContext } from "../../../contexts/GlobalContext";
 
-const PascoaPage = ({ location }: iPascoaProps) => {
-    const { setLoading } = useGlobalContext();
+const PascoaPage = () => {
+    const { setLoading, location } = useGlobalContext();
     const router = useRouter();
     const [totalSecond, setTotalSecond] = useState(2 * 60);
     const minute = Math.floor(totalSecond / 60);

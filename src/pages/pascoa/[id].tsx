@@ -4,11 +4,11 @@ import { useGlobalContext } from "../../contexts/GlobalContext";
 import GlobalStyle from "../../styles/global";
 import { lightTheme, darkTheme } from "../../styles/theme";
 import { GetStaticProps } from "next";
-import { patchLocationGet } from "../../lib/locations";
-import PascoaPage from "../../components/Pages/Pascoa";
+import { getLocation } from "../../lib/locations";
+import ProtectPage from "../../components/Pages/Pascoa/Protect";
 import NotFoundPascoa from "../../components/Pages/Pascoa/NotFound";
 
-export interface iPascoaProps {
+interface iPascoaProps {
     location: {
         id: string;
         name: string;
@@ -28,8 +28,8 @@ export default function Pascoa({ location }: iPascoaProps) {
             />
             <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
                 <GlobalStyle />
-                {location.id ? (
-                    <PascoaPage location={location} />
+                {location ? (
+                    <ProtectPage id={location.id} />
                 ) : (
                     <NotFoundPascoa />
                 )}
@@ -41,8 +41,8 @@ export default function Pascoa({ location }: iPascoaProps) {
 export const getStaticPaths = async () => {
     return {
         paths: [
-            { params: { id: "8fa7817d-6f76-404d-9728-490dcc65fde7" } },
-            { params: { id: "32838a4f-9be1-404c-a1fe-49ee79bfcf16" } },
+            { params: { id: "37914d48-62b6-4915-8d44-9a9ab077204b" } },
+            { params: { id: "9c328118-348f-4482-85e7-40bc8e58dddb" } },
         ],
         fallback: "blocking",
     };
@@ -51,7 +51,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (ctx) => {
     const id = ctx.params!.id;
     if (typeof id === "string") {
-        const location = await patchLocationGet(id);
+        const location = await getLocation(id);
         return { props: { location } };
     }
 };
