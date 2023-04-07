@@ -1,5 +1,6 @@
 import { StyledModal, StyledTitle } from "./styles";
 import { AiOutlineClose } from "react-icons/ai";
+import { FaSadCry } from "react-icons/fa";
 import { useRouter } from "next/router";
 
 interface iModalProps {
@@ -16,12 +17,22 @@ const Modal = ({ name, isDelete }: iModalProps) => {
                     <h2>{name}</h2>
                     <button
                         onClick={() => {
-                            router.replace("/");
+                            router.replace("/pascoa");
                         }}
                     >
                         <AiOutlineClose />
                     </button>
                 </StyledTitle>
+                <h3>
+                    Não foi dessa vez <FaSadCry />
+                </h3>
+                <button
+                    onClick={() => {
+                        router.replace("/pascoa");
+                    }}
+                >
+                    Sair
+                </button>
             </div>
         </StyledModal>
     );

@@ -19,9 +19,10 @@ const StyledModal = styled.div<iStyledModalProps>`
         display: flex;
         height: fit-content;
         flex-direction: column;
+        align-items: center;
         width: 80%;
         max-width: 780px;
-        background-color: var(--Color-background-secondary);
+        background-color: var(--Color-background);
         padding: 20px;
         ${({ isDelete }) => {
             if (isDelete) {
@@ -31,10 +32,24 @@ const StyledModal = styled.div<iStyledModalProps>`
             }
         }}
         & > h3 {
-            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             color: var(--Color-text-secondary);
-            font-size: 12px;
-            margin-bottom: 10px;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+        & > button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0 10px;
+            height: 20px;
+            font-size: 15px;
+            color: var(--Color-grey-0);
+            border-radius: 4px;
+            width: 50%;
+            background-color: var(--Color-background-depoimentos);
         }
     }
 `;
@@ -65,7 +80,7 @@ const StyledTitle = styled.div`
         height: 20px;
         color: var(--Color-grey-0);
         border-radius: 4px;
-        background-color: var(--Color-button-secondary);
+        background-color: var(--Color-background-depoimentos);
         & > svg {
             width: 10px;
             stroke-width: 1;

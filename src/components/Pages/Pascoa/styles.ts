@@ -23,6 +23,7 @@ const StyledContainer = styled.div<iStyledContainerProps>`
             `;
         }
     }}
+
     & > div {
         display: flex;
         flex-direction: column;
@@ -36,12 +37,25 @@ const StyledContainer = styled.div<iStyledContainerProps>`
                     height: 100vh;
                     max-width: unset;
                     align-items: center;
+                    position: absolute;
                     & > img {
                         object-fit: contain;
                     }
                 `;
             }
         }};
+    }
+`;
+
+const StyledText = styled.div`
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    & > span {
+        margin-top: 20px;
+        font-size: 40px;
     }
 `;
 
@@ -69,19 +83,18 @@ const StyledContact = styled.div`
 `;
 
 const StyledForm = styled.div`
-    margin-top: 20px;
+    margin: 20px 0;
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
     padding: 34px 18px;
-    gap: 15px;
+    gap: 30px;
     background-color: var(--Color-background-depoimentos);
     box-shadow: 0px 3.20867px 32.0867px -8.02168px rgba(0, 0, 0, 0.25);
     border-radius: 3.20867px;
 
     @media (min-width: 768px) {
-        margin-top: 35px;
         padding: 42px 22px;
     }
 
@@ -96,14 +109,10 @@ const StyledForm = styled.div`
     }
 
     & > form {
-        width: 100%;
+        width: 90%;
         display: flex;
         flex-direction: column;
-        gap: 15px;
-
-        @media (min-width: 768px) {
-            gap: 22px;
-        }
+        gap: 30px;
     }
 
     & > div {
@@ -130,4 +139,4 @@ const StyledForm = styled.div`
     }
 `;
 
-export { StyledContainer, StyledContact, StyledForm };
+export { StyledContainer, StyledContact, StyledText, StyledForm };
