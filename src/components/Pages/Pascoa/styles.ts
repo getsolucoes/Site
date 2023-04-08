@@ -82,6 +82,7 @@ const StyledForm = styled.div`
         color: #fff;
         font-size: 15px;
         font-weight: 700;
+        text-align: center;
 
         @media (min-width: 768px) {
             font-size: 18px;

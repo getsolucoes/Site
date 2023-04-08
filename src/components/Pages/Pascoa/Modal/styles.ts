@@ -24,6 +24,7 @@ const StyledModal = styled.div<iStyledModalProps>`
         max-width: 780px;
         background-color: var(--Color-background);
         padding: 20px;
+        gap: 10px;
         ${({ isDelete }) => {
             if (isDelete) {
                 return css`
@@ -43,12 +44,11 @@ const StyledModal = styled.div<iStyledModalProps>`
         & > button {
             display: inline-flex;
             align-items: center;
-            padding: 0 10px;
-            height: 20px;
+            padding: 0 30px;
+            height: 30px;
             font-size: 15px;
             color: var(--Color-grey-0);
             border-radius: 4px;
-            width: 50%;
             background-color: var(--Color-background-depoimentos);
         }
     }
