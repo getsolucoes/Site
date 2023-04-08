@@ -11,7 +11,6 @@ import Button from "./Button";
 import Footer from "../../Footer";
 import { api } from "../../../services/api";
 import formatPhone from "../../../scripts/formatPhone";
-import Loading from "./Loading";
 import { useGlobalContext } from "../../../contexts/GlobalContext";
 import moment from "moment";
 
@@ -130,7 +129,6 @@ const PascoaPage = () => {
                 </StyledForm>
             </StyledContainer>
             <Footer />
-            <Loading />
         </>
     );
 };

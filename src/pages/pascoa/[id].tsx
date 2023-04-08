@@ -7,6 +7,7 @@ import { GetStaticProps } from "next";
 import { getLocation } from "../../lib/locations";
 import ProtectPage from "../../components/Pages/Pascoa/Protect";
 import Modal from "../../components/Pages/Pascoa/Modal";
+import Loading from "../../components/Pages/Pascoa/Loading";
 
 interface iPascoaProps {
     location: {
@@ -29,6 +30,7 @@ export default function Pascoa({ location }: iPascoaProps) {
             <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
                 <GlobalStyle />
                 <ProtectPage id={location?.id} />
+                <Loading />
                 <Modal isDelete />
             </ThemeProvider>
         </>
