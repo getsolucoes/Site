@@ -3,8 +3,8 @@ import { ThemeProvider } from "styled-components";
 import { useGlobalContext } from "../../contexts/GlobalContext";
 import GlobalStyle from "../../styles/global";
 import { lightTheme, darkTheme } from "../../styles/theme";
-import { GetStaticProps } from "next";
-import { getLocation } from "../../lib/locations";
+import { GetStaticPaths, GetStaticProps } from "next";
+import { getAllLocationIds, getLocation } from "../../lib/locations";
 import ProtectPage from "../../components/Pages/Pascoa/Protect";
 import Modal from "../../components/Pages/Pascoa/Modal";
 import Loading from "../../components/Pages/Pascoa/Loading";
@@ -37,13 +37,10 @@ export default function Pascoa({ location }: iPascoaProps) {
     );
 }
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
+    const paths = await getAllLocationIds();
     return {
-        paths: [
-            { params: { id: "1" } },
-            { params: { id: "640456ce-d264-48ea-824d-3a29a22a1b02" } },
-            { params: { id: "9c328118-348f-4482-85e7-40bc8e58dddb" } },
-        ],
+        paths,
         fallback: "blocking",
     };
 };
