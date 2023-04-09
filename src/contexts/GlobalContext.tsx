@@ -7,8 +7,6 @@ import {
     Dispatch,
     SetStateAction,
 } from "react";
-import { iLocation } from "../interfaces";
-import { api } from "../services/api";
 
 interface iGlobalContextProps {
     children: ReactNode;
@@ -19,14 +17,6 @@ interface iGlobalContext {
     toggleTheme: () => void;
     isClickMobile: boolean;
     setIsClickMobile: Dispatch<SetStateAction<boolean>>;
-    loading: boolean;
-    setLoading: Dispatch<SetStateAction<boolean>>;
-    location: iLocation;
-    loadLocation: (id: string) => Promise<void>;
-    modal: iModal;
-    setModal: Dispatch<SetStateAction<iModal>>;
-    isSuccess: boolean;
-    setIsSuccess: Dispatch<SetStateAction<boolean>>;
 }
 
 interface iModal {
@@ -39,10 +29,6 @@ const GlobalContext = createContext({} as iGlobalContext);
 function GlobalWrapper({ children }: iGlobalContextProps) {
     const [theme, setTheme] = useState("light");
     const [isClickMobile, setIsClickMobile] = useState(false);
-    const [loading, setLoading] = useState(false);
-    const [location, setLocation] = useState<iLocation>();
-    const [modal, setModal] = useState<iModal>({ isView: false });
-    const [isSuccess, setIsSuccess] = useState(false);
 
     const toggleTheme = () => {
         if (theme === "light") {
@@ -59,31 +45,11 @@ function GlobalWrapper({ children }: iGlobalContextProps) {
         localTheme && setTheme(localTheme);
     }, []);
 
-    const loadLocation = async (id: string) => {
-        try {
-            setLoading(true);
-            const response = await api.patch(`locations/${id}/user`);
-            setLocation(response.data);
-            setLoading(false);
-        } catch (error) {
-            setLoading(false);
-            setModal({ isView: true, name: "Link Expirado" });
-        }
-    };
-
     let sharedState = {
         theme,
         toggleTheme,
         isClickMobile,
         setIsClickMobile,
-        loading,
-        setLoading,
-        location,
-        loadLocation,
-        modal,
-        setModal,
-        isSuccess,
-        setIsSuccess,
     };
 
     return (
