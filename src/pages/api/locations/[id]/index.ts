@@ -16,7 +16,6 @@ export default async function handler(
         if (method === "GET") {
             const location = await prisma.location.findUnique({
                 where: { id },
-                include: { user: true },
             });
 
             return res.json(location);

@@ -16,7 +16,9 @@ export default async function handler(
 
         return res.status(201).json(location);
     } else if (method === "GET") {
-        const locations = await prisma.location.findMany();
+        const locations = await prisma.location.findMany({
+            include: { user: true },
+        });
 
         return res.json(locations);
     }
