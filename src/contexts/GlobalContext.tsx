@@ -25,6 +25,8 @@ interface iGlobalContext {
     loadLocation: (id: string) => Promise<void>;
     modal: iModal;
     setModal: Dispatch<SetStateAction<iModal>>;
+    isSuccess: boolean;
+    setIsSuccess: Dispatch<SetStateAction<boolean>>;
 }
 
 interface iModal {
@@ -40,6 +42,7 @@ function GlobalWrapper({ children }: iGlobalContextProps) {
     const [loading, setLoading] = useState(false);
     const [location, setLocation] = useState<iLocation>();
     const [modal, setModal] = useState<iModal>({ isView: false });
+    const [isSuccess, setIsSuccess] = useState(false);
 
     const toggleTheme = () => {
         if (theme === "light") {
@@ -79,6 +82,8 @@ function GlobalWrapper({ children }: iGlobalContextProps) {
         loadLocation,
         modal,
         setModal,
+        isSuccess,
+        setIsSuccess,
     };
 
     return (
