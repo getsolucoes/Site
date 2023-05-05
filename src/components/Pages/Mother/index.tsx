@@ -22,7 +22,7 @@ import Footer from "./Footer";
 import { ChangeEvent, useState } from "react";
 import { useMotherContext } from "../../../contexts";
 import { api } from "../../../services";
-import { formatPhone } from "../../../scripts";
+import { formatPhone, limitString } from "../../../scripts";
 import { useRouter } from "next/router";
 import { iUser } from "../../../interfaces";
 
@@ -64,7 +64,7 @@ const InputFile = () => {
                 setValue("image", null);
             }
             setFile(image);
-            setFileName(image.name);
+            setFileName(limitString(image.name));
             setValue("image", fileName);
         } catch {
             setFile(null);
