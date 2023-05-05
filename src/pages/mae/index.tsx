@@ -1,7 +1,10 @@
 import { NextSeo } from "next-seo";
-import ContatoPage from "../components/Pages/Contato";
+import MotherPage from "../../components/Pages/Mother";
+import Loading from "../../components/Pages/Mother/Loading";
+import SuccessPage from "../../components/Pages/Mother/Success";
+import Modal from "../../components/Pages/Mother/Modal";
 
-export default function Contato() {
+export default function Mother() {
     return (
         <>
             <NextSeo
@@ -10,7 +13,10 @@ export default function Contato() {
                 canonical="https://solucoesget.com/contato"
             />
 
-            <ContatoPage />
+            <MotherPage />
+            <Loading />
+            <SuccessPage />
+            <Modal />
         </>
     );
 }
