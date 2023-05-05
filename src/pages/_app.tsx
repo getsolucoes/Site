@@ -1,9 +1,10 @@
 import type { AppProps } from "next/app";
-import { GlobalWrapper } from "../contexts/GlobalContext";
 import { DefaultSeo } from "next-seo";
 import SEO from "../../next-seo.config";
 import Head from "next/head";
 import Analytics from "../components/Analytics";
+import Providers from "../contexts";
+import GlobalStyle from "../styles/global";
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
@@ -46,9 +47,10 @@ export default function App({ Component, pageProps }: AppProps) {
                 <link rel="manifest" href="/site.webmanifest" />
             </Head>
             <DefaultSeo {...SEO} />
-            <GlobalWrapper>
+            <Providers>
                 <Component {...pageProps} />
-            </GlobalWrapper>
+                <GlobalStyle />
+            </Providers>
         </>
     );
 }

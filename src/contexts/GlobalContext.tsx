@@ -1,16 +1,14 @@
 import {
     createContext,
     useContext,
-    ReactNode,
     useState,
     useEffect,
     Dispatch,
     SetStateAction,
 } from "react";
-
-interface iGlobalContextProps {
-    children: ReactNode;
-}
+import { iContextProps } from "../interfaces";
+import { darkTheme, lightTheme } from "../styles/theme";
+import { ThemeProvider } from "styled-components";
 
 interface iGlobalContext {
     theme: string;
@@ -19,14 +17,13 @@ interface iGlobalContext {
     setIsClickMobile: Dispatch<SetStateAction<boolean>>;
 }
 
-interface iModal {
-    isView: boolean;
-    name?: string;
-}
-
 const GlobalContext = createContext({} as iGlobalContext);
 
-function GlobalWrapper({ children }: iGlobalContextProps) {
+export const useGlobalContext = () => {
+    return useContext(GlobalContext);
+};
+
+export const GlobalProvider = ({ children }: iContextProps) => {
     const [theme, setTheme] = useState("light");
     const [isClickMobile, setIsClickMobile] = useState(false);
 
@@ -54,13 +51,9 @@ function GlobalWrapper({ children }: iGlobalContextProps) {
 
     return (
         <GlobalContext.Provider value={sharedState}>
-            {children}
+            <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+                {children}
+            </ThemeProvider>
         </GlobalContext.Provider>
     );
-}
-
-function useGlobalContext() {
-    return useContext(GlobalContext);
-}
-
-export { GlobalWrapper, useGlobalContext };
+};
