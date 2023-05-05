@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: "http://localhost:4002/",
+    baseURL: "https://mother.solucoesget.tec.br/",
     timeout: 10000,
 });
