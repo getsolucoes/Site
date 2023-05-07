@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { iStyledButtonActionProps, StyledButtonAction } from "./styles";
 
-const ButtonAction = ({ location }: iStyledButtonActionProps) => {
+export const ButtonAction = ({ location }: iStyledButtonActionProps) => {
     return (
         <StyledButtonAction location={location}>
             <Link href="/">
@@ -16,7 +16,7 @@ const ButtonAction = ({ location }: iStyledButtonActionProps) => {
                     />
                 ) : (
                     <Image
-                        src="g_mae.svg"
+                        src="/g_mae.svg"
                         alt="Get Soluções"
                         width={40}
                         height={40}
@@ -26,5 +26,3 @@ const ButtonAction = ({ location }: iStyledButtonActionProps) => {
         </StyledButtonAction>
     );
 };
-
-export default ButtonAction;

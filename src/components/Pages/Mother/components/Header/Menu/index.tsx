@@ -1,8 +1,8 @@
-import ButtonAction from "../../ButtonAction";
-import Options from "../Options";
+import { ButtonAction } from "../../ButtonAction";
+import { Options } from "../Options";
 import { StyledMenu } from "./styles";
 
-const Menu = () => {
+export const Menu = () => {
     return (
         <StyledMenu>
             <Options />
@@ -10,5 +10,3 @@ const Menu = () => {
         </StyledMenu>
     );
 };
-
-export default Menu;

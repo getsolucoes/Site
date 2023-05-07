@@ -1,9 +1,9 @@
-import Logo from "./Logo";
-import Menu from "./Menu";
-import MenuMobile from "./MenuMobile";
+import { Logo } from "./Logo";
+import { Menu } from "./Menu";
+import { MenuMobile } from "./MenuMobile";
 import { StyledContainer, StyledHeader } from "./styles";
 
-const Header = () => {
+export const Header = () => {
     return (
         <>
             <StyledHeader>
@@ -16,5 +16,3 @@ const Header = () => {
         </>
     );
 };
-
-export default Header;
