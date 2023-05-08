@@ -13,10 +13,15 @@ export const LoginPage = () => {
     const { login } = useMotherContext();
 
     return (
-        <div style={{ backgroundColor: "#A63C76" }}>
+        <div style={{ backgroundColor: "#A63C76", minHeight: "100vh" }}>
             <Header />
             <div style={{ paddingTop: " 6.25rem" }}></div>
-            <Box margin={1} display="flex" justifyContent="center">
+            <Box
+                margin={1}
+                display="flex"
+                justifyContent="center"
+                paddingTop={2}
+            >
                 <Box
                     display="flex"
                     flexDirection="column"
@@ -47,7 +52,9 @@ export const LoginPage = () => {
                     </FormContainer>
                 </Box>
             </Box>
-            <Footer />
+            <div style={{ position: "fixed", width: "100vw", bottom: 0 }}>
+                <Footer />
+            </div>
         </div>
     );
 };
