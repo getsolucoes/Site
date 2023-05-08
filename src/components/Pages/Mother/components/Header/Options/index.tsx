@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { useGlobalContext } from "../../../../../contexts/GlobalContext";
+import { useGlobalContext } from "../../../../../../contexts/GlobalContext";
 import { StyledOptions } from "./styles";
 
-const Options = () => {
+export const Options = () => {
     const { setIsClickMobile } = useGlobalContext();
     return (
         <StyledOptions>
@@ -69,5 +69,3 @@ const Options = () => {
         </StyledOptions>
     );
 };
-
-export default Options;

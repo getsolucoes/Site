@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { StyledLogo } from "./styles";
-import { useGlobalContext } from "../../../../../contexts/GlobalContext";
+import { useGlobalContext } from "../../../../../../contexts/GlobalContext";
 
-const Logo = () => {
+export const Logo = () => {
     const { setIsClickMobile } = useGlobalContext();
     return (
         <StyledLogo>
@@ -30,5 +30,3 @@ const Logo = () => {
         </StyledLogo>
     );
 };
-
-export default Logo;

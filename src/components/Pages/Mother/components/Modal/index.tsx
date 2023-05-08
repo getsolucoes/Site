@@ -2,9 +2,9 @@ import { StyledModal, StyledTitle } from "./styles";
 import { AiOutlineClose } from "react-icons/ai";
 import { FaSadCry } from "react-icons/fa";
 import { useRouter } from "next/router";
-import { useMotherContext } from "../../../../contexts";
+import { useMotherContext } from "../../../../../contexts";
 
-const Modal = () => {
+export const Modal = () => {
     const { modal, setModal, setIsSuccess } = useMotherContext();
     const router = useRouter();
     return (
@@ -46,5 +46,3 @@ const Modal = () => {
         </>
     );
 };
-
-export default Modal;

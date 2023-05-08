@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import Options from "../Options";
 import { IoClose } from "react-icons/io5";
 import { StyledContainer, StyledMenuMobile } from "./styles";
-import { useGlobalContext } from "../../../../../contexts/GlobalContext";
+import { useGlobalContext } from "../../../../../../contexts";
+import { Options } from "../Options";
 
-const MenuMobile = () => {
+export const MenuMobile = () => {
     const { isClickMobile, setIsClickMobile } = useGlobalContext();
     const handleBackdropClick = (event) => {
         if (event) event.preventDefault();
@@ -43,5 +43,3 @@ const MenuMobile = () => {
         </>
     );
 };
-
-export default MenuMobile;

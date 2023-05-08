@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { StyledContainer, StyledContent, StyledFooter } from "./styles";
 
-const Footer = () => {
+export const Footer = () => {
     return (
         <StyledFooter>
             <StyledContainer>
@@ -70,5 +70,3 @@ const Footer = () => {
         </StyledFooter>
     );
 };
-
-export default Footer;
