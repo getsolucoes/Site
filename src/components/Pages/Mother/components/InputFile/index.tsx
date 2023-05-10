@@ -27,14 +27,15 @@ export const InputFile = () => {
         try {
             const image = e.target.files[0];
             const maxSize = 5 * 1024 * 1024;
-            if (image.size <= maxSize) {
+            if (image.size > maxSize) {
                 setFile(null);
-                setFileName("Nenhum arquivo escolhido");
+                setFileName(limitString(image.name));
                 setValue("image", null);
+            } else {
+                setFile(image);
+                setFileName(limitString(image.name));
+                setValue("image", fileName);
             }
-            setFile(image);
-            setFileName(limitString(image.name));
-            setValue("image", fileName);
         } catch {
             setFile(null);
             setFileName("Nenhum arquivo escolhido");
