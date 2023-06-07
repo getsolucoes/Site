@@ -176,7 +176,7 @@ export const Header = () => {
       >
         <Box
           width={theme.spacing(28)}
-          height="100%"
+          height="100vh"
           display="flex"
           flexDirection="column"
         >
@@ -236,7 +236,7 @@ export const Header = () => {
           </Box>
         </Box>
       </Drawer>
-      <Box position="absolute" bottom={15} right={15}>
+      <Box position="fixed" bottom={15} right={15}>
         <Fab
           LinkComponent={Link}
           href="https://wa.me/5588996931410"
