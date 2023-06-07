@@ -223,6 +223,17 @@ export const Header = () => {
               </ListItemButton>
             </List>
           </Box>
+          <Box display="flex" justifyContent="center" p={2}>
+            <Button
+              color={themeName === "light" ? "primary" : "secondary"}
+              variant="contained"
+              LinkComponent={Link}
+              href="/"
+              endIcon={themeName === "light" ? <GLigth /> : <GDark />}
+            >
+              Seja cliente
+            </Button>
+          </Box>
         </Box>
       </Drawer>
       <Box position="absolute" bottom={15} right={15}>
