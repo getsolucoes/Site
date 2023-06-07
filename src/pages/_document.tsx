@@ -1,51 +1,68 @@
+import { ComponentProps, ComponentType } from "react";
 import Document, {
-    DocumentContext,
-    Head,
-    Html,
-    Main,
-    NextScript,
+  Html,
+  Head,
+  Main,
+  NextScript,
+  DocumentProps,
+  DocumentContext,
 } from "next/document";
-import { ServerStyleSheet } from "styled-components";
+import createEmotionServer from "@emotion/server/create-instance";
+import { AppType } from "next/app";
+import { MyAppProps } from "./_app";
+import { createEmotionCache } from "@/utils";
 
-export default class MyDocument extends Document {
-    static async getInitialProps(ctx: DocumentContext) {
-        const sheet = new ServerStyleSheet();
-        const originalRenderPage = ctx.renderPage;
-
-        try {
-            ctx.renderPage = () =>
-                originalRenderPage({
-                    enhanceApp: (App) => (props) =>
-                        sheet.collectStyles(<App {...props} />),
-                });
-
-            const initialProps = await Document.getInitialProps(ctx);
-            return {
-                ...initialProps,
-                styles: [initialProps.styles, sheet.getStyleElement()],
-            };
-        } finally {
-            sheet.seal();
-        }
-    }
-    render(): JSX.Element {
-        return (
-            <Html lang="pt-BR">
-                <Head>
-                    <meta
-                        name="google-site-verification"
-                        content="a5HXpWfT3BQBVFQ1coCH6Fz4pbvBD5O6qUedn6QQHTM"
-                    />
-                    <link
-                        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@700&display=swap"
-                        rel="stylesheet"
-                    />
-                </Head>
-                <body>
-                    <Main />
-                    <NextScript />
-                </body>
-            </Html>
-        );
-    }
+interface MyDocumentProps extends DocumentProps {
+  emotionStyleTags: JSX.Element[];
 }
+
+export default function MyDocument({ emotionStyleTags }: MyDocumentProps) {
+  return (
+    <Html lang="pt-BR">
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="a5HXpWfT3BQBVFQ1coCH6Fz4pbvBD5O6qUedn6QQHTM"
+        />
+        <meta name="emotion-insertion-point" content="" />
+        {emotionStyleTags}
+      </Head>
+      <body>
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
+  );
+}
+
+MyDocument.getInitialProps = async (ctx: DocumentContext) => {
+  const originalRenderPage = ctx.renderPage;
+
+  const cache = createEmotionCache();
+  const { extractCriticalToChunks } = createEmotionServer(cache);
+
+  ctx.renderPage = () =>
+    originalRenderPage({
+      enhanceApp: (
+        App: ComponentType<ComponentProps<AppType> & MyAppProps>
+      ) =>
+        function EnhanceApp(props) {
+          return <App emotionCache={cache} {...props} />;
+        },
+    });
+
+  const initialProps = await Document.getInitialProps(ctx);
+  const emotionStyles = extractCriticalToChunks(initialProps.html);
+  const emotionStyleTags = emotionStyles.styles.map((style) => (
+    <style
+      data-emotion={`${style.key} ${style.ids.join(" ")}`}
+      key={style.key}
+      dangerouslySetInnerHTML={{ __html: style.css }}
+    />
+  ));
+
+  return {
+    ...initialProps,
+    emotionStyleTags,
+  };
+};
